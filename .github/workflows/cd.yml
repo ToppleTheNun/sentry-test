@@ -31,8 +31,15 @@ jobs:
       - name: Install
         run: nci
 
+      - name: Calculate environment name
+        id: environment-name
+        run: echo "environment_name=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+
       - name: Build
         run: nr build
+        env:
+          REACT_APP_ENVIRONMENT_NAME: ${{ steps.environment-name.outputs.environment_name }}
+          REACT_APP_VERSION: ${{ github.sha }}
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
