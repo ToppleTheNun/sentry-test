@@ -1,7 +1,12 @@
 import { useRouteError } from "react-router-dom";
+import { useEffect } from "react";
 
 export function RouteErrorBoundary() {
   const error = useRouteError();
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   if (error instanceof Error) {
     return (
