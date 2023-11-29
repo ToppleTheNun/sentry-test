@@ -2,6 +2,7 @@
   "name": "sentry-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://topplethenun.github.io/sentry-test",
   "dependencies": {
     "@reduxjs/toolkit": "1.9.7",
     "@sentry/react": "7.83.0",
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@antfu/ni": "0.21.12",
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "prettier": "3.1.0"
   }
